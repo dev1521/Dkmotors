@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HEADER | E-COMMERCE WEBSITE</title>
+    <link rel="stylesheet" href="css/header.css">
+    <script src="https://kit.fontawesome.com/4a3b1f73a2.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <header>
+        <section>
+            <div id="container">
+                <div id="shopName"><a href="index.html"> <b>DEv'</b>me </a></div>
+                <div id="collection">
+                    <div id="clothing"><a href="#ridingGears"> GEARS </a></div>
+                    <div id="accessories"><a href="#bikeAccessories"> BIKE ACCESSORIES </a></div>
+                </div>
+                <div id="search">
+                    <i class="fas fa-search search"></i>
+                    <input type="text" id="input" name="searchBox" placeholder="Search for Gears and Accessories">
+                </div>
+                <div id="user">
+                    <a href="cart.html"> <i class="fas fa-shopping-cart addedToCart"><div id="badge"> 0 </div></i></a>
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <script>
+    let lastScrollTop = 0;
+    const header = document.querySelector('header');
+    console.log(header); // Debugging to ensure the element is selected
+
+    window.addEventListener('scroll', function() {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        console.log("Scroll Top: ", scrollTop, "Last Scroll Top: ", lastScrollTop);
+
+        if (scrollTop > lastScrollTop) {
+            console.log("Hiding navbar"); // Debugging log
+            header.style.top = '-100px'; // Move navbar off screen
+        } else {
+            console.log("Showing navbar"); // Debugging log
+            header.style.top = '0';
+        }
+
+        lastScrollTop = scrollTop;
+    });
+    </script>
+</body>
+</html>
